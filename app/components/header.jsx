@@ -81,6 +81,11 @@ class Header extends Component {
                 </Link>
               </li>,
               <li key={ 1 }>
+                <Link to={ i18n('routes.gamble') }>
+                  { i18n('header.gamble') }
+                </Link>
+              </li>,
+              <li key={ 2 }>
                 <a href='#' onClick={ this.handleLogout }>
                   { i18n('header.logout') }
                 </a>

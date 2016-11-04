@@ -5,6 +5,7 @@ export default {
     'header.account': 'Account',
     'header.logout': 'Logout',
     'header.login': 'Login',
+    'header.gamble': 'Gamble',
     'guides.page-title': 'Guides',
     'protected.page-title': 'Protected Page',
     'profile.page-title': 'Profile - {fullName}',
@@ -24,6 +25,7 @@ export default {
     'routes.guides': '/guides',
     'routes.login': '/login',
     'routes.profile': '/profile/:seed',
+    'routes.gamble': '/gamble',
     'routes.account': '/account'
   }
 };
