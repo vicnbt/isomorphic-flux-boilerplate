@@ -6,6 +6,7 @@ export default {
     'header.logout': 'Logout',
     'header.login': 'Login',
     'header.gamble': 'Gamble',
+    'header.form': 'Form',
     'guides.page-title': 'Guides',
     'protected.page-title': 'Protected Page',
     'profile.page-title': 'Profile - {fullName}',
@@ -26,6 +27,7 @@ export default {
     'routes.login': '/login',
     'routes.profile': '/profile/:seed',
     'routes.gamble': '/gamble',
+    'routes.form': '/form',
     'routes.account': '/account'
   }
 };

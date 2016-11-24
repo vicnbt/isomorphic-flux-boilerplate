@@ -6,6 +6,7 @@ export default {
     'header.logout': 'Se déconnecter',
     'header.login': 'Se connecter',
     'header.gamble': 'Gamble',
+    'header.form': 'Form',
     'guides.page-title': 'Guides',
     'protected.page-title': 'Page protégée',
     'profile.page-title': 'Profil - {fullName}',
@@ -26,6 +27,7 @@ export default {
     'routes.login': '/connexion',
     'routes.profile': '/profil/:seed',
     'routes.gamble': '/gamble',
+    'routes.form': '/form',
     'routes.account': '/mon-compte'
   }
 };

@@ -32,6 +32,10 @@ export default function (flux) { /* eslint react/display-name: 0 */
         paths: [ '/gamble', '/gamble' ],
         component: require('./pages/gamble')
       }) }
+      { generateRoute({
+        paths: [ '/form', '/form' ],
+        component: require('./pages/form')
+      }) }
       <Route path='*' component={ require('./pages/not-found') } />
     </Route>
   )

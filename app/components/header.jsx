@@ -86,6 +86,11 @@ class Header extends Component {
                 </Link>
               </li>,
               <li key={ 2 }>
+                <Link to={ i18n('routes.form') }>
+                  { i18n('header.form') }
+                </Link>
+              </li>,
+              <li key={ 3 }>
                 <a href='#' onClick={ this.handleLogout }>
                   { i18n('header.logout') }
                 </a>
