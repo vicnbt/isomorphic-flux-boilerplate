@@ -1,7 +1,6 @@
 class FormStore {
 
   constructor() {
-    console.log('c2')
     this.bindActions(this.alt.getActions('form'))
     this.defaultData = { nameRef: '123', phoneRef: '', descrRef: '' }
     this.formData = this.defaultData
