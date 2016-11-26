@@ -9,13 +9,17 @@ class FormPage extends Component {
   }
 
   static propTypes = {
-    formData: PropTypes.object.isRequired
+    formData: PropTypes.object.isRequired,
+    searchResults: PropTypes.object.isRequired,
+    filteredResults: PropTypes.object.isRequired
   }
 
   constructor(p) {
     super(p)
     this.state = {
-      formData: p.formData
+      formData: p.formData,
+      searchResults: p.searchResults,
+      filteredResults: p.filteredResults || []
     }
   }
 
@@ -44,16 +48,27 @@ class FormPage extends Component {
 
   render() {
     const s_ = this.state
+    console.log(s_)
     return (
       <div>
         <p className='alert alert-info'>formtest</p>
         <div className='form-group'>
           <input type='text' placeholder='name' defaultValue={ s_.formData.nameRef } ref='nameRef' onChange={ this.updateForm.bind(this, 'nameRef') } />
-          { s_.formData.nameRef && <input type='text' placeholder='descr' defaultValue={ s_.formData.descrRef } ref='descrRef' onChange={ this.updateForm.bind(this, 'descrRef') } /> }
-          { s_.formData.descrRef && <input type='text' placeholder='phone' defaultValue={ s_.formData.phoneRef } ref='phoneRef' onChange={ this.updateForm.bind(this, 'phoneRef') } /> }
+          <br />
+          <input type='text' placeholder='descr' defaultValue={ s_.formData.descrRef } ref='descrRef' onChange={ this.updateForm.bind(this, 'descrRef') } />
+          <br />
+          <input type='text' placeholder='phone' defaultValue={ s_.formData.phoneRef } ref='phoneRef' onChange={ this.updateForm.bind(this, 'phoneRef') } />
+          <br />
           <button className='btn btn-primary' onClick={ ::this.sendData }>
             Add
           </button>
+        </div>
+        { s_.filteredResults.length > 0 && <div>already found</div> }
+        <div>
+          { s_.filteredResults.map((res) => {
+            console.log('item', res)
+            return <div>{ res.nameRef }</div>
+          }) }
         </div>
         <div>
         </div>
@@ -63,6 +78,6 @@ class FormPage extends Component {
 
 }
 
-const reducer = ({ form: { form, formData } }) => ({ form, formData })
+const reducer = ({ form: { form, formData, searchResults, filteredResults } }) => ({ form, formData, searchResults, filteredResults })
 export default connect('form', reducer)(FormPage)
 

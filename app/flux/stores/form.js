@@ -1,24 +1,25 @@
+import { aliasToReal as _ } from 'lodash/fp/_mapping'
 class FormStore {
 
   constructor() {
     this.bindActions(this.alt.getActions('form'))
-    this.defaultData = { nameRef: '123', phoneRef: '', descrRef: '' }
+    this.defaultData = { nameRef: '', phoneRef: '', descrRef: '' }
     this.formData = this.defaultData
     this.searchResults = []
+    this.filteredResults = []
   }
 
   onUpdateSearch(name) {
-    console.log('onUpdateSearch', name, this.fromData)
+    console.log('onUpdateSearch', name)
+    _.has(this.searchResults, { nameRef: 1 })
+    // this.filteredResults = _.filter(this.searchResults, (item) => true || item.nameRef.search(name) !== -1) || []
+    this.filteredResults = this.searchResults
+    console.log('this.filteredResults', this.filteredResults)
   }
 
   onSendData(data) {
-    console.log('searchResults', this.searchResults)
-
     if (this.validate(data)) {
-      this.searchResults.push(data)
-      console.log('validated', name, data)
-    } else {
-      console.log('not validated', name, data)
+      this.searchResults.push(JSON.parse(JSON.stringify(data)))
     }
   }
 
