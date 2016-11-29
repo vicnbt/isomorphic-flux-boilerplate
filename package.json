@@ -37,6 +37,8 @@
     ]
   },
   "dependencies": {
+    "redux": "*",
+    "redux-thunk": "^2.1.0",
     "alt": "^0.18.4",
     "alt-container": "^1.0.0",
     "alt-utils": "^1.0.0",
