@@ -28,7 +28,7 @@ class GamblePage extends Component {
 
     return (
       <div>
-        <p className='alert alert-info'>{ i18n('login.help') }</p>
+        <p className='alert alert-info'>Gamble</p>
         <div className='form-group'>
           <button className='btn btn-primary' onClick={ ::this.startGamble }>
             { i18n('login.submit') }

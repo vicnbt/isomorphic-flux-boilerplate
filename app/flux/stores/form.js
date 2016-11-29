@@ -1,4 +1,5 @@
-import { aliasToReal as _ } from 'lodash/fp/_mapping'
+import * as _ from 'lodash'
+
 class FormStore {
 
   constructor() {
@@ -10,10 +11,7 @@ class FormStore {
   }
 
   onUpdateSearch(name) {
-    console.log('onUpdateSearch', name)
-    _.has(this.searchResults, { nameRef: 1 })
-    // this.filteredResults = _.filter(this.searchResults, (item) => true || item.nameRef.search(name) !== -1) || []
-    this.filteredResults = this.searchResults
+    this.filteredResults = name.nameRef !== '' && _.filter(this.searchResults, (item) => item.nameRef.search(name.nameRef) !== -1) || []
     console.log('this.filteredResults', this.filteredResults)
   }
 

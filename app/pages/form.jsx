@@ -48,6 +48,7 @@ class FormPage extends Component {
 
   render() {
     const s_ = this.state
+    const p_ = this.props
     console.log(s_)
     return (
       <div>
@@ -63,9 +64,9 @@ class FormPage extends Component {
             Add
           </button>
         </div>
-        { s_.filteredResults.length > 0 && <div>already found</div> }
+        { p_.filteredResults.length > 0 && <div>already found</div> }
         <div>
-          { s_.filteredResults.map((res) => {
+          { p_.filteredResults.map((res) => {
             console.log('item', res)
             return <div>{ res.nameRef }</div>
           }) }
