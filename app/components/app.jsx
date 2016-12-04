@@ -11,7 +11,7 @@ import configureStore from '../flux/REDUX-store/configureStore.dev'
 if (process.env.BROWSER) require('styles/app.css')
 
 
-let store = configureStore()
+let REDUXstore = configureStore()
 
 class App extends Component {
 
@@ -37,17 +37,21 @@ class App extends Component {
 
   render() {
     const { children } = this.props
-
+    const { flux } = this.context
+    REDUXstore.gamble = flux.getStore('gamble')
     return (
       <div>
         <Header />
         <hr />
+        <strong>Alt</strong>
         { children }
         <hr />
-
-        <p>REDUX counter</p>
-        <Root store={ store } />
-
+        <hr />
+        <strong>REDUX</strong>
+        <br />
+        <br />
+        <Root store={ REDUXstore } />
+        <hr />
         <Footer />
       </div>
     )

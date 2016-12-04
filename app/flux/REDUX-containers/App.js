@@ -33,6 +33,8 @@ App.propTypes = {
  * object. By mapping it to props, we can pass it to the child component Counter.
  */
 function mapStateToProps(state) {
+  console.log('state3', state)
+
   return {
     counter: state.counter
   }
@@ -47,6 +49,9 @@ function mapStateToProps(state) {
  * More info: http://redux.js.org/docs/api/bindActionCreators.html
  */
 function mapDispatchToProps(dispatch) {
+  console.log('CounterActions', CounterActions)
+  console.log('dispatch', dispatch)
+
   return {
     actions: bindActionCreators(CounterActions, dispatch)
   }

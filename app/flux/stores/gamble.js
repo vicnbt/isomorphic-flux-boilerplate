@@ -1,7 +1,6 @@
 class GambleStore {
 
   constructor() {
-    console.log('c')
     this.bindActions(this.alt.getActions('gamble'))
     this.gamble = null
   }
