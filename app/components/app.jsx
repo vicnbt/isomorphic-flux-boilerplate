@@ -1,10 +1,17 @@
 import React, { Component, PropTypes } from 'react'
 
+import Root from '../flux/REDUX-containers/Root.dev.js'
+
 import Header from 'components/header'
 import Footer from 'components/footer'
 
+import configureStore from '../flux/REDUX-store/configureStore.dev'
+
 /* istanbul ignore next */
 if (process.env.BROWSER) require('styles/app.css')
+
+
+let store = configureStore()
 
 class App extends Component {
 
@@ -37,6 +44,10 @@ class App extends Component {
         <hr />
         { children }
         <hr />
+
+        <p>REDUX counter</p>
+        <Root store={ store } />
+
         <Footer />
       </div>
     )

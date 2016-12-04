@@ -1,14 +1,8 @@
 import React, { Component, PropTypes } from 'react'
 import connect from 'connect-alt'
-import Root from '../flux/REDUX-containers/Root.dev.js'
-import configureStore from '../flux/REDUX-store/configureStore.dev'
 
 class GamblePage extends Component {
 
-  constructor(props) {
-    super(props)
-    this.store = configureStore()
-  }
 
   static contextTypes = {
     flux: PropTypes.object.isRequired,
@@ -46,8 +40,6 @@ class GamblePage extends Component {
           { gamble && gamble.map((item) => <div>{ item.userThrow } { item.casinoThrow } { item.casinoThrow < item.userThrow ? 'win' : 'lose' }</div>) }
         </div>
 
-        <p>REDUX counter</p>
-        <Root store={ this.store } />
       </div>
     )
   }
