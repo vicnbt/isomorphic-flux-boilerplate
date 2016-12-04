@@ -37,7 +37,6 @@ class App extends Component {
 
   render() {
     const { children } = this.props
-    const { flux } = this.context
     return (
       <div>
         <Header />
