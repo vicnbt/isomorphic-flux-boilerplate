@@ -45,7 +45,7 @@ class App extends Component {
         { children }
         <hr />
         <hr />
-        <strong>REDUX</strong>
+        <strong>REDUX </strong>({ children.props.route.path })
         <br />
         <br />
         <Root store={ REDUXstore } />

@@ -11,8 +11,6 @@ export default class Counter extends Component {
   }
 
   render() {
-    const fluxData = this.props
-    console.log(fluxData)
     return (
       <div className='counter-container'>
         <div className='counter-num-label'>{ this.props.counter }</div>

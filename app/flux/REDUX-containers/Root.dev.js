@@ -9,7 +9,6 @@ import DevTools from './DevTools'
 module.exports = class Root extends Component {
   render() {
     const { store } = this.props
-    console.log('store2', store.gamble)
     return (
       /**
        * Provider is a component provided to us by the 'react-redux' bindings that

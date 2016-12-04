@@ -10,7 +10,8 @@ class GamblePage extends Component {
   }
 
   static propTypes = {
-    gamble: PropTypes.array
+    gamble: PropTypes.array,
+    counter: PropTypes.number
   }
 
   startGamble() {
@@ -25,11 +26,11 @@ class GamblePage extends Component {
 
   render() {
     const { i18n } = this.context
-    const { gamble } = this.props
+    const { gamble, counter } = this.props
 
     return (
       <div>
-        <p className='alert alert-info'>Gamble</p>
+        <p className='alert alert-info'>Gamble { counter }</p>
         <div className='form-group'>
           <button className='btn btn-primary' onClick={ ::this.startGamble }>
             { i18n('login.submit') }
@@ -46,6 +47,6 @@ class GamblePage extends Component {
 
 }
 
-const reducer = ({ gamble: { gamble } }) => ({ gamble })
+const reducer = ({ gamble: { gamble, counter } }) => ({ gamble, counter })
 export default connect('gamble', reducer)(GamblePage)
 
